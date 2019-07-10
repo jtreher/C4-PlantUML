@@ -1,4 +1,4 @@
-!include https://raw.githubusercontent.com/jtreher/C4-PlantUML/1.2019.7.1/C4_Context.puml
+!include /var/CF-PlantUML/C4_Context.puml
 ' uncomment the following line and comment the first to use locally
 ' !include C4_Context.puml
 
@@ -41,6 +41,8 @@ legend right
 |<$SYSTEM_BG_COLOR>   | system |
 |<$EXTERNAL_SYSTEM_BG_COLOR>      | external system |
 |<$CONTAINER_BG_COLOR>   | container |
+| <$sync> | Synchronous |
+| <$async> | Async |
 endlegend
 !endfunction
 
@@ -53,6 +55,13 @@ rectangle "==$label\n//<size:$TECHN_FONT_SIZE>[$techn]</size>//" <<container>> a
 !unquoted function Container($alias, $label, $techn, $descr)
 rectangle "==$label\n//<size:$TECHN_FONT_SIZE>[$techn]</size>//\n\n $descr" <<container>> as $alias
 !endfunction
+!unquoted function ContainerLink($alias, $label, $techn, $url)
+rectangle "==$label\n//<size:$TECHN_FONT_SIZE>[$techn]</size>//" <<container>> as $alias [[$url]]
+!endfunction
+!unquoted function ContainerLink($alias, $label, $techn, $descr, $url)
+rectangle "==$label\n//<size:$TECHN_FONT_SIZE>[$techn]</size>//\n\n $descr" <<container>> as $alias [[$url]]
+!endfunction
+
 
 !unquoted function ContainerDb($alias, $label, $techn)
 database "==$label\n//<size:$TECHN_FONT_SIZE>[$techn]</size>//" <<container>> as $alias
