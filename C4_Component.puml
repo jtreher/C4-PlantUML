@@ -1,4 +1,4 @@
-!include https://raw.githubusercontent.com/jtreher/C4-PlantUML/1.2019.7.1/C4_Container.puml
+!include /var/CF-PlantUML/C4_Container.puml
 ' uncomment the following line and comment the first to use locally
 ' !include C4_Container.puml
 
@@ -42,6 +42,8 @@ legend right
 |<$EXTERNAL_SYSTEM_BG_COLOR>      | external system |
 |<$CONTAINER_BG_COLOR>   | container |
 |<$COMPONENT_BG_COLOR>   | component |
+|------------------ | async |
+|->
 endlegend
 !endfunction
 
